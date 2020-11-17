@@ -17,29 +17,12 @@ ros::Publisher state_pub;
 
 void msgCallback(const darknet_ros_msgs::BoundingBoxes::ConstPtr& msg)
 {
-    cout<<"Bouding Boxes (Class):" << msg->bounding_boxes[0].Class <<endl;
-    if(msg->bounding_boxes[0].Class.compare(target) == 0) {
-	cout<<">>>>TARGET (Class):" << msg->bounding_boxes[0].Class <<endl;
-        state_num = 1;
-    } else {
-        state_num = 0;
-    }
 }
 
 #if 1
 void *test(void *data)
 {
-    ros::Rate loop_rate(100);
-  while (ros::ok())
-  {
-    msg.stamp = ros::Time::now();        
-    msg.warning  = state_num;                 
 
-    state_pub.publish(msg);        
-	
-    loop_rate.sleep();                  
-
-  }
 }
 #endif
 
