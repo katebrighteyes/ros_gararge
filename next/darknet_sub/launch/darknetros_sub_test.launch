@@ -32,6 +32,5 @@
     <param name="config_path"           value="$(arg yolo_config_path)" />
   </node>
 
-  <node pkg="darknet_sub" type="darknet_sub_node" name="darknet_sub_node" output="screen"/>
 
 </launch>
