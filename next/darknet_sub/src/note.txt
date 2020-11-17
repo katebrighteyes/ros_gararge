@@ -1,0 +1,23 @@
+  <node pkg="darknet_sub" type="darknet_sub_node" name="darknet_sub_node" output="screen"/>
+
+
+    cout<<"Bouding Boxes (Class):" << msg->bounding_boxes[0].Class <<endl;
+    if(msg->bounding_boxes[0].Class.compare(target) == 0) {
+	cout<<">>>>TARGET (Class):" << msg->bounding_boxes[0].Class <<endl;
+        state_num = 1;
+    } else {
+        state_num = 0;
+    }
+
+
+    ros::Rate loop_rate(100);
+  while (ros::ok())
+  {
+    msg.stamp = ros::Time::now();        
+    msg.warning  = state_num;                 
+
+    state_pub.publish(msg);        
+	
+    loop_rate.sleep();                  
+
+  }
