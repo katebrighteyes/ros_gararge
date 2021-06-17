@@ -4,12 +4,10 @@
 
 int main(int argc, char **argv)                
 {
-  ros::init(argc, argv, "topic_pub_test");     
-  ros::NodeHandle nh;                         
-
-
-  ros::Publisher ros_test_pub = nh.advertise<ros_topic_test::MsgTest>("ros_test_msg", 500);
-
+  //todo 1
+  
+  
+  
   ros::Rate loop_rate(500);
 
   ros_topic_test::MsgTest msg;    
@@ -26,9 +24,8 @@ int main(int argc, char **argv)
 
     ROS_INFO("send msg = strdata %s %d", msg.strdata.c_str(), msg.ndata);       
 
-    ros_test_pub.publish(msg);          
-
-    loop_rate.sleep();                   
+    //todo 2
+                  
 
     ++countnum;                          
   }
