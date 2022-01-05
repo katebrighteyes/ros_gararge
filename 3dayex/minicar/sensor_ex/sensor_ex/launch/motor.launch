@@ -1,0 +1,4 @@
+<launch>
+  <include file="$(find sensor_ex)/launch/include/vesc.launch"/>
+  <node pkg="sensor_ex" type="motor.py" name="motor_send_node" output="screen" />
+</launch>
