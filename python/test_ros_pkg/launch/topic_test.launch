@@ -1,0 +1,5 @@
+<launch>
+
+  <node pkg="test_ros_pkg" type="topic_pub.py" name="topic_pub"/>
+  <node pkg="test_ros_pkg" type="topic_sub.py" name="topic_sub" output="screen" />
+</launch>
